@@ -38,19 +38,19 @@ console.log(hasUniqueChars("Monday"))
 
 //---------------------------------------------------------//
 
-function isPangram(str){
-    str = str.toLowerCase();
-    let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
-    for (let i = 0; i < alphabet.length; i++) {
-        //i dont know what to put here//
-            return false;
-        }
-    }
-    return true;
+// function isPangram(str){
+//     str = str.toLowerCase();
+//     let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+//     for (let i = 0; i < alphabet.length; i++) {
+//         //i dont know what to put here//
+//             return false;
+//         }
+//     }
+//     return true;
 
 
 
-console.log(isPangram("The quick brown fox jumps over the lazy dog"))
+// console.log(isPangram("The quick brown fox jumps over the lazy dog"))
 
 //If i finished writing this function, it would have a runtime of O(n) because it 
 //uses a single for loop. 
@@ -59,13 +59,22 @@ console.log(isPangram("The quick brown fox jumps over the lazy dog"))
 
 function findLongestWord(words) {
     let longestWord =words[0];
-    let longestWordLength = 0;
+    let longestWordLength = words[0].length;
 
-    for (let i=0; i < words.length; i++) {
+    for (let i=1; i < words.length; i++) {
         let wordLength = words[i].length;
         if (wordLength > longestWordLength) {
+            longestWord = words[i];
             longestWordLength = wordLength;
         }
     }
-    return longestWordLength;
+    return longestWord;
 }
+
+const words = [ 'cat', 'doggggggggggggg', 'donkey'];
+const longestWord = findLongestWord(words);
+console.log(longestWord)
+
+// The runtime of this function is O(n) because it contains a single for loop.
+
+//---------------------------------------------------------//
